@@ -49,7 +49,7 @@ AC_ARG_ENABLE(pic,
 
 case $CCTYPE in
   gcc)
-    CCFLAGS="-O3 -fno-tree-vectorize -ffast-math -fomit-frame-pointer -std=c99 -pedantic -Wextra -Wall -Wno-unknown-pragmas -Wshadow -Wmissing-prototypes -Wfatal-errors -march=native"
+    CCFLAGS="-O3 -fno-tree-vectorize -ffast-math -fomit-frame-pointer -std=c99 -pedantic -Wextra -Wall -Wno-unknown-pragmas -Wshadow -Wmissing-prototypes -Wfatal-errors"
     GCCVERSION="`$CC -dumpversion 2>&1`"
     echo "Using gcc version $GCCVERSION"
     AC_SUBST(GCCVERSION)
@@ -62,7 +62,7 @@ case $CCTYPE in
     fi
     ;;
   icc)
-    CCFLAGS="-O3 -xHOST -std=c99 -ip -Wbrief -Wall -vec-report0 -openmp-report0 -wd383,981,1419,1572"
+    CCFLAGS="-O3 -std=c99 -ip -Wbrief -Wall -vec-report0 -openmp-report0 -wd383,981,1419,1572"
     ;;
   *)
     CCFLAGS="-O2"
